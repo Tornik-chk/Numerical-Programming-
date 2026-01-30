@@ -70,12 +70,6 @@ OUTPUT:
 - Animated visualization window
 - Validation metrics printed to console
 
-AI USAGE DISCLOSURE:
-====================
-Claude AI (Anthropic) was used for:
-- Code review and optimization suggestions
-- Documentation structure and mathematical notation
-- Spatial indexing optimization for repulsion forces
 """
 
 from __future__ import annotations
@@ -777,7 +771,7 @@ def plot_convergence_metrics(traj: np.ndarray, r_offsets: np.ndarray, tgrid: np.
     axes[1].set_yscale('log')
 
     plt.tight_layout()
-    plt.savefig('convergence_metrics_subproblem1.png', dpi=150)
+    plt.savefig('outputs/sub1/convergence_metrics_subproblem1.png', dpi=150)
     print("Saved: convergence_metrics_subproblem1.png")
     plt.show()
 # ==============================
@@ -1028,7 +1022,7 @@ if __name__ == "__main__":
     metrics = validate_solution(traj, r_offsets, params["rsafe"], verbose=True)
     
     # Save trajectories for later use (sub-problems 2 & 3)
-    output_file = "trajectories_subproblem1.npy"
+    output_file = "outputs/sub1/trajectories_subproblem1.npy"
     np.save(output_file, traj)
     print(f"Saved trajectories: {output_file}")
     

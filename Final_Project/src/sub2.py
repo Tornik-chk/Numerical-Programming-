@@ -700,7 +700,7 @@ def plot_transition_metrics(traj: np.ndarray, T0: np.ndarray, T1: np.ndarray, tg
     axes[1].set_ylim([-0.1, 1.1])
     
     plt.tight_layout()
-    plt.savefig('transition_metrics_subproblem2.png', dpi=150)
+    plt.savefig('outputs/sub2/transition_metrics_subproblem2.png', dpi=150)
     print("Saved: transition_metrics_subproblem2.png")
     plt.show()
 
@@ -786,7 +786,7 @@ def animate_trajectories(
 
 # Input paths
 HANDWRITTEN_IMAGE = os.path.join("data", "handwritten_name.jpg")
-TRAJ1_PATH = "trajectories_subproblem1.npy"
+TRAJ1_PATH = "outputs/sub1/trajectories_subproblem1.npy"
 
 # Must match Sub-problem 1
 N_DRONES = 300
@@ -943,7 +943,7 @@ if DEBUG_PLOTS or True:
     plt.title("Sub-problem 2: Target Formations")
     plt.grid(True, alpha=0.3)
     plt.tight_layout()
-    plt.savefig("target_formations_subproblem2.png", dpi=150)
+    plt.savefig("outputs/sub2/target_formations_subproblem2.png", dpi=150)
     print("Saved: target_formations_subproblem2.png")
     plt.show()
 
@@ -973,7 +973,7 @@ print("\nValidating solution...")
 metrics = validate_transition(traj2, T1_assigned, params["rsafe"], verbose=True)
 
 # Save trajectories
-output_file = "trajectories_subproblem2.npy"
+output_file = "outputs/sub2/trajectories_subproblem2.npy"
 np.save(output_file, traj2)
 print(f"Saved trajectories: {output_file}")
 

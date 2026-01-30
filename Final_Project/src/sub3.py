@@ -851,7 +851,7 @@ def plot_tracking_metrics(traj: np.ndarray, T_frames: np.ndarray, fps: float, dt
     plt.title('Shape Tracking Performance Over Time')
     plt.grid(True, alpha=0.3)
     plt.tight_layout()
-    plt.savefig('tracking_metrics_subproblem3.png', dpi=150)
+    plt.savefig('outputs/sub3/tracking_metrics_subproblem3.png', dpi=150)
     print("Saved: tracking_metrics_subproblem3.png")
     plt.show()
 
@@ -1029,7 +1029,7 @@ def animate_swarm(
 
 # Input paths
 VIDEO_PATH = os.path.join("data", "Ball2.mp4")
-TRAJ2_PATH = "trajectories_subproblem2.npy"
+TRAJ2_PATH = "outputs/sub2/trajectories_subproblem2.npy"
 
 # Simulation settings
 dt_sim = 0.01
@@ -1180,7 +1180,7 @@ metrics = validate_shape_tracking(
 )
 
 # Save trajectories
-output_file = "trajectories_subproblem3.npy"
+output_file = "outputs/sub3/trajectories_subproblem3.npy"
 np.save(output_file, traj3)
 print(f"Saved trajectories: {output_file}")
 

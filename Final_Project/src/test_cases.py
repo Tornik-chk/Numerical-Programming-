@@ -16,9 +16,9 @@ from scipy.spatial.distance import pdist
 def check_files_exist():
     """Check if all required output files exist."""
     required = [
-        "trajectories_subproblem1.npy",
-        "trajectories_subproblem2.npy",
-        "trajectories_subproblem3.npy"
+        "outputs/sub1/trajectories_subproblem1.npy",
+        "outputs/sub2/trajectories_subproblem2.npy",
+        "outputs/sub3/trajectories_subproblem3.npy"
     ]
     
     missing = [f for f in required if not Path(f).exists()]
@@ -144,9 +144,9 @@ def plot_all_trajectories():
     ]
     
     paths = [
-        "trajectories_subproblem1.npy",
-        "trajectories_subproblem2.npy",
-        "trajectories_subproblem3.npy"
+        "outputs/sub1/trajectories_subproblem1.npy",
+        "outputs/sub2/trajectories_subproblem2.npy",
+        "outputs/sub3/trajectories_subproblem3.npy"
     ]
     
     for ax, title, path in zip(axes, titles, paths):
@@ -167,7 +167,7 @@ def plot_all_trajectories():
         ax.grid(True, alpha=0.3)
     
     plt.tight_layout()
-    plt.savefig('test_all_trajectories.png', dpi=150)
+    plt.savefig('outputs/tests/test_all_trajectories.png', dpi=150)
     print("\nSaved: test_all_trajectories.png")
     plt.show()
 
@@ -186,17 +186,17 @@ def generate_test_report():
     results = []
     
     results.append(test_static_convergence(
-        "trajectories_subproblem1.npy",
+        "outputs/sub1/trajectories_subproblem1.npy",
         "Sub-problem 1 (Static Formation)"
     ))
     
     results.append(test_static_convergence(
-        "trajectories_subproblem2.npy",
+        "outputs/sub2/trajectories_subproblem2.npy",
         "Sub-problem 2 (Transition)"
     ))
     
     results.append(test_dynamic_tracking(
-        "trajectories_subproblem3.npy",
+        "outputs/sub3/trajectories_subproblem3.npy",
         "Sub-problem 3 (Dynamic Tracking)"
     ))
     
